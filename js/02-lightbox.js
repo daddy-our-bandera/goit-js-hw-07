@@ -4,7 +4,6 @@ console.log(galleryItems);
 
 const gallery = document.querySelector(".gallery");
 
-
 const createMarkUp = galleryItems
   .map(
     ({ preview, original, description }) => `<a class="gallery__item"
@@ -18,5 +17,9 @@ const createMarkUp = galleryItems
 gallery.insertAdjacentHTML("beforeend", createMarkUp);
 
 new SimpleLightbox(".gallery a", {
-  /* options */
+  captions: true,
+  captionDelay: 250,
+  captionSelector: "img",
+  captionsData: "alt",
+  captionPosition: "bottom",
 });
